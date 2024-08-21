@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: trans-app
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: ZylLx930101
+    url: jdbc:mysql://localhost:3306/local?characterEncoding=utf8&useSSL=false
+    username: root
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  jpa:
+    database: mysql
+    generate-ddl: true
+    show-sql: true
+token:
+  sign: 'd?xPR3D^m*H!N%|-@waz'
+  refreshSign: '|F,jIkVEv[X~7E|Y8S#W'

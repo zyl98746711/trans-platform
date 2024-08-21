@@ -15,6 +15,11 @@
     <artifactId>trans-platform</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
+    <modules>
+        <module>trans-common</module>
+        <module>trans-facade</module>
+        <module>trans-app</module>
+    </modules>
 
     <dependencies>
         <dependency>
