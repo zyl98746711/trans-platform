@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
@@ -18,9 +18,14 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /**
+ * json工具类
+ *
  * @author zyl
  */
 public class JsonUtils {
+
+    private JsonUtils() {
+    }
 
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
@@ -34,7 +39,7 @@ public class JsonUtils {
         module.addSerializer(LocalDate.class, new LocalDateSerializer(dateFormatter));
         module.addDeserializer(LocalDate.class, new LocalDateDeserializer(dateFormatter));
         OBJECT_MAPPER.registerModule(module);
-        OBJECT_MAPPER.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        OBJECT_MAPPER.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
         OBJECT_MAPPER.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
