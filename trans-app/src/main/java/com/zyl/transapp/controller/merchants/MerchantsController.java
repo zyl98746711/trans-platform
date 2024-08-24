@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.annotation.Resource;
+
 /**
  * 商家控制层
  *
@@ -23,11 +25,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("merchants")
 public class MerchantsController {
 
-    private final MerchantsService merchantsService;
-
-    public MerchantsController(MerchantsService merchantsService) {
-        this.merchantsService = merchantsService;
-    }
+    @Resource
+    private MerchantsService merchantsService;
 
 
     @PostMapping
