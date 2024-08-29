@@ -14,6 +14,11 @@ spring:
     database: mysql
     generate-ddl: true
     show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+
 token:
   sign: 'd?xPR3D^m*H!N%|-@waz'
   refreshSign: '|F,jIkVEv[X~7E|Y8S#W'

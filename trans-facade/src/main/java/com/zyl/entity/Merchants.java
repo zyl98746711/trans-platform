@@ -2,7 +2,6 @@ package com.zyl.entity;
 
 import java.time.LocalDateTime;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,19 +19,31 @@ import lombok.Data;
 @Table(name = "u_merchants")
 public class Merchants {
 
+    /**
+     * 商家id
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "merchants_id")
     private Integer merchantsId;
 
-    @Column(name = "user_name")
+    /**
+     * 用户名
+     */
     private String userName;
 
+    /**
+     * 密码
+     */
     private String password;
 
-    @Column(name = "create_time")
+    /**
+     * 创建时间
+     */
     private LocalDateTime createTime;
 
+    /**
+     * 密码盐
+     */
     private String salt;
 
 
