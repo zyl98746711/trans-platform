@@ -22,3 +22,5 @@ spring:
 token:
   sign: 'd?xPR3D^m*H!N%|-@waz'
   refreshSign: '|F,jIkVEv[X~7E|Y8S#W'
+logging:
+  config: classpath:logback-spring.xml
